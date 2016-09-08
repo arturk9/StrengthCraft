@@ -44,14 +44,8 @@ namespace StrengthCraft.Controllers
             _context.Attendees.Add(attendance);
             _context.SaveChanges();
 
-            return RedirectToAction("ThankYou", "Attendees");
+            return View("~/Views/Attendees/ThankYou.cshtml");
 
-        }
-
-        [HttpPost]
-        public ActionResult ThankYou()
-        {
-            return View();
         }
 
         public ActionResult AwaitingAttendances()
