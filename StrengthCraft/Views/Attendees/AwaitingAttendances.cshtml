@@ -27,7 +27,12 @@
             <td>@attender.Weight</td>
             <td>@attender.WorkoutDurationTime</td>
             <td>@attender.YoutubeMovieUrl</td>
-            <td>Edytuj | Usuń | <a href="@Url.Action("AcceptAttendance", "Attendees", new{id = attender.AttendeeId})">Zaakceptuj</a></td>
+            <td>
+                Edytuj |
+                <a href="@Url.Action("DeleteAttendance", "Attendees", new{id = attender.AttendeeId})">
+                    Usuń |</a>
+                <a href="@Url.Action("AcceptAttendance", "Attendees", new{id = attender.AttendeeId})">Zaakceptuj</a>
+</td>
         </tr>
 
     }

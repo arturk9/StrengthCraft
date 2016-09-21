@@ -1,38 +1,61 @@
 ﻿@model StrengthCraft.ViewModels.AttendanceFormViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Uzupełnij zgłoszenie";
 }
 
-<h2>Create</h2>
+<h2>Formularz zgłoszeniowy:</h2>
 @using (Html.BeginForm("CreateAttendance", "Attendees"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.AttendeeName)
+        <label>Imię:</label>
         @Html.TextBoxFor(m => m.AttendeeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AttendeeName)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.AttendeeLastName)
+        <label>Nazwisko:</label>
         @Html.TextBoxFor(m => m.AttendeeLastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AttendeeLastName)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.EmailAddress)
+        <label>Adres e-mail:</label>
         @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EmailAddress)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Weight)
+        <label>Waga:</label>
         @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Weight)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.WorkoutDurationTime)
+        <label>Czas wykonania ćwiczenia:</label>
         @Html.TextBoxFor(m => m.WorkoutDurationTime, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WorkoutDurationTime)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.YoutubeMovieUrl)
+        <label>Link do nagrania:</label>
         @Html.TextBoxFor(m => m.YoutubeMovieUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.YoutubeMovieUrl)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Category)
+        <label>Kategoria:</label>
         @Html.DropDownListFor(m => m.Category, new SelectList(Model.Categories, "Id", "CategoryName"), new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <input type="checkbox" name="regulamin" style="margin-right: 10px;">Oświadczam,  że  zapoznałem/am  się  i  akceptuję
+Regulamin  konkursu  „
+Metamorfozy  Philips
+”  oraz
+wyrażam zgodę na przetwarzanie danych osobowych, zawartych w formularzu zgłoszeniowym, przez
+TVN Media sp. z o.o. z siedzibą w Warszawie 02
+-
+952, ul. Wiertnicza 166
+, wyłącznie w celu i zakresie
+niezbędnym dla przeprowadzenia konkursu
+-
+nie dłużej niż przez o
+kres przeprowadzania konkursu i
+do
+przedawnienia ewentualnych roszczeń.
     </div>
     <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
 }
