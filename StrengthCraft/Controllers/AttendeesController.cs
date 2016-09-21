@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using StrengthCraft.Models;
@@ -29,6 +30,13 @@ namespace StrengthCraft.Controllers
         {
             var category = _context.Categories.Single(g => g.Id == viewModel.Category);
 
+            if (!ModelState.IsValid)
+            {
+                viewModel.Categories = _context.Categories.ToList();
+                return View("Create", viewModel);
+            }
+            
+
             var attendance = new Attendee
             {
                 AttendeeLastName = viewModel.AttendeeLastName,
@@ -38,7 +46,9 @@ namespace StrengthCraft.Controllers
                 YoutubeMovieUrl = viewModel.YoutubeMovieUrl,
                 WorkoutDurationTime = viewModel.WorkoutDurationTime,
                 Category = category,
-                IsVerified = false
+                IsVerified = false,
+                RegistrationDate = DateTime.Now
+                
             };
 
             _context.Attendees.Add(attendance);
@@ -73,6 +83,14 @@ namespace StrengthCraft.Controllers
         {
             _context.Attendees.Single(m => m.AttendeeId == id).IsVerified = true;
 
+            _context.SaveChanges();
+            return RedirectToAction("AwaitingAttendances", "Attendees");
+        }
+
+        public ActionResult DeleteAttendance(int id)
+        {
+            var attendanceToRemove = _context.Attendees.Single(m => m.AttendeeId == id);
+            _context.Attendees.Remove(attendanceToRemove);
             _context.SaveChanges();
             return RedirectToAction("AwaitingAttendances", "Attendees");
         }

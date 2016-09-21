@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201609082023165_temp.Designer.cs">
       <DependentUpon>201609082023165_temp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609211738424_AddingRegistrationDate.cs" />
+    <Compile Include="Migrations\201609211738424_AddingRegistrationDate.Designer.cs">
+      <DependentUpon>201609211738424_AddingRegistrationDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -292,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609082023165_temp.resx">
       <DependentUpon>201609082023165_temp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211738424_AddingRegistrationDate.resx">
+      <DependentUpon>201609211738424_AddingRegistrationDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
