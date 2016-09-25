@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title - StrengthCraft</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootswatch/superheroSC/bootstrap.min.css" />
 
+    <meta name="description" content="StrengthCraft!" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,8 +24,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Zgłoś się!", "Create", "Attendees")</li>
-                    <li>@Html.ActionLink("Regulamin", "About", "Home")</li>
+                    <li>@Html.ActionLink("Weź udział", "Create", "Attendees")</li>
+                    <li>@Html.ActionLink("Regulamin", "Regulations", "Home")</li>
+                    <li>@Html.ActionLink("Idea", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -31,14 +35,17 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+        </div>
+
+    <div id="footer" class="container-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <h4 class="text-center">&copy; @DateTime.Now.Year - StrengthCraft</h4>
+        </div>
     </div>
+</body>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-</body>
 </html>

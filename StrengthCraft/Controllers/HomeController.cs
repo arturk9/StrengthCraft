@@ -26,5 +26,12 @@ namespace StrengthCraft.Controllers
 
             return View();
         }
+
+        public ActionResult Regulations()
+        {
+            ViewBag.Message = "Your regulations page.";
+
+            return View();
+        }
     }
 }
