@@ -1,3 +1,11 @@
-/**
- * Created by Tomasz on 25.09.2016.
- */
+(function() {
+    var $regulationsCheckbox = $('#regulations-checkbox'),
+        $regulationsSubmitBtn = $('#submit-regulations-btn');
+
+    function enableSubmitButton() {
+        $regulationsSubmitBtn.attr('disabled', !this.checked);
+    }
+
+    $regulationsCheckbox.on('change', enableSubmitButton);
+
+})();
