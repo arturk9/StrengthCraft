@@ -41,7 +41,7 @@
         @Html.DropDownListFor(m => m.Category, new SelectList(Model.Categories, "Id", "CategoryName"), new { @class = "form-control" })
     </div>
     <div class="form-group">
-        <input type="checkbox" name="regulamin" style="margin-right: 10px;">Oświadczam,  że  zapoznałem/am  się  i  akceptuję
+        <input type="checkbox" name="regulamin" style="margin-right: 10px;" id="regulations-checkbox">Oświadczam,  że  zapoznałem/am  się  i  akceptuję
 Regulamin  konkursu  „
 Metamorfozy  Philips
 ”  oraz
@@ -57,6 +57,7 @@ kres przeprowadzania konkursu i
 do
 przedawnienia ewentualnych roszczeń.
     </div>
-    <button type="submit" class="btn btn-primary">Wyślij zgłoszenie</button>
+    <button type="submit" class="btn btn-primary" id="submit-regulations-btn" disabled>Wyślij zgłoszenie</button>
 }
 
+@Scripts.Render("~/bundles/main")
