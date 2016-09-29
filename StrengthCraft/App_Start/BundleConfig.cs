@@ -30,7 +30,6 @@ namespace StrengthCraft
           "~/Scripts/cookiesAlert.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
                       "~/Content/Site.css"));
         }
     }
