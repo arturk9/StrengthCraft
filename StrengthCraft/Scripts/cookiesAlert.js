@@ -92,7 +92,7 @@
     $.cookiepolicy = function (options) {
         options = $.extend({
             cookie: 'cookiepolicyinfo',
-            info: 'Używamy ciasteczek. Jeżeli klikniesz <strong>Zamknij</strong>, to będzie oznaczać zgodę na dalsze ich używanie. Też nie mam pojęcia czemu to jest ważne. Pewnie i tego nie przeczytasz ;).',
+            info: 'Używamy ciasteczek. Jeżeli klikniesz <strong>Zamknij</strong>, to będzie oznaczać zgodę na dalsze ich używanie. Też nie mam pojęcia czemu to jest ważne. Pewnie i tak tego nie przeczytasz ;).',
             close: 'Zamknij'
         }, options || {});
 

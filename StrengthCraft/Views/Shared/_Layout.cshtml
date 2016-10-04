@@ -25,9 +25,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Zapisz się", "Create", "Attendees")</li>
+                    <li>@Html.ActionLink("Zapisz się", "Index", "Home")</li>
+                    <!--                    <li>@Html.ActionLink("Zapisz się", "Create", "Attendees")</li> -->
                     <li>@Html.ActionLink("Regulamin", "Regulations", "Home")</li>
                     <li>@Html.ActionLink("Współpraca", "About", "Home")</li>
+                    <li>@Html.ActionLink("Pomoc", "Help", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -37,7 +39,7 @@
     <div class="container body-content">
 
         <div class="row">
-            <section class="col-sm-3">
+            <section class="col-sm-3" style="border-right: 1px dotted;">
 
                 <img src="~/img/logo_main.png" height="150" width="150" class="img-responsive center-block" />
                 <br />
