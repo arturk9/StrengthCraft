@@ -1,4 +1,4 @@
-(function() {
+$(function() {
     var $regulationsCheckbox = $('#regulations-checkbox'),
         $regulationsSubmitBtn = $('#submit-regulations-btn');
 

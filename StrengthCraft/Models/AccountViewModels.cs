@@ -5,7 +5,8 @@ namespace StrengthCraft.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email jest wymagany.")]
+        [EmailAddress(ErrorMessage = "Niepoprawny adres email.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -41,7 +42,7 @@ namespace StrengthCraft.Models
 
     public class ForgotViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email jest wymagany.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -65,7 +66,7 @@ namespace StrengthCraft.Models
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Niepoprawny adres email.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

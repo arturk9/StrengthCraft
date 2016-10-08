@@ -5,13 +5,14 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>@ViewBag.Title - StrengthCraft</title>
+    <link rel="stylesheet" href="~/Content/bootswatch/superheroSC/bootstrap.min.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="~/Content/bootswatch/superheroSC/bootstrap.min.css" />
 
     <meta name="description" content="StrengthCraft!" />
 </head>
 <body>
+    @Scripts.Render("~/bundles/jquery")
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,9 +25,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Weź udział", "Create", "Attendees")</li>
+                    <li>@Html.ActionLink("Zapisz się", "Index", "Home")</li>
+                    <!--                    <li>@Html.ActionLink("Zapisz się", "Create", "Attendees")</li> -->
                     <li>@Html.ActionLink("Regulamin", "Regulations", "Home")</li>
-                    <li>@Html.ActionLink("Idea", "About", "Home")</li>
+                    <li>@Html.ActionLink("Współpraca", "About", "Home")</li>
+                    <li>@Html.ActionLink("Pomoc", "Help", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -34,18 +37,63 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
 
+        <div class="row">
+            <section class="col-sm-3" style="border-right: 1px dotted;">
+
+                <img src="~/img/logo_main.png" height="150" width="150" class="img-responsive center-block" />
+                <br />
+                <h3 class="text-center">StrengthCraft</h3>
+                <h4 class="text-center">Challenge #1</h4>
+                <div class="text-center">
+                    <strong>Koniec zgłoszeń</strong><br />
+                    31.10.2016<br />
+                    <strong><a href="#" class="btn btn-primary" disabled>Zapisz się</a></strong><br /><br />
+                    <strong>Kategoria OPEN</strong><BR />
+                    20x przysiad tylny  -  150% wagi ciała <BR />
+                    20x podciąganie nachwytem - waga ciała<BR />
+                    25x dipsy - waga ciała<BR />
+                    10x martwy ciąg -  200% wagi ciała<BR />
+                    <BR />
+                    <strong>Kategoria ROOKIE</strong><BR />
+                    15x przysiad tylny - 100% wagi ciała<BR />
+                    10x podciąganie nachwytem - waga ciała<BR />
+                    15x dipsy - waga ciała<BR />
+                    10x martwy ciąg - 150% wagi ciała<BR />
+                </div>
+
+            </section>
+            <section class="col-sm-7">
+                @RenderBody()
+</section>
+                <section class="col-sm-2">
+                    <h3 class="text-center">Znajdź nas</h3>
+                    <p class="text-center">
+                        <strong><a href="https://www.facebook.com/StrengthCraft/" class="btn btn-primary btn-block btn-primary" target="_blank">Facebook</a></strong><br />
+                        <strong><a href="https://www.youtube.com/channel/UCUWg23LEAyNWyZU3fMy-X8Q" class="btn btn-primary btn-block" target="_blank">Youtube</a></strong><br />
+                        <strong><a href="http://www.42.do/" class="btn btn-primary btn-block" target="_blank">42.do</a></strong><br />
+                        <strong><a href="http://forum.koxteam.pl/" class="btn btn-primary btn-block" target="_blank">Forum Koxteam</a></strong><br />
+                        <strong><a href="https://www.instagram.com/strengthcraft/" class="btn btn-primary btn-block" target="_blank">Instragram</a></strong><br />
+                    </p>
+                    <h3 class="text-center">Odwiedź</h3>
+                    <p class="text-center">
+                        <strong><a href="https://www.facebook.com/ostrowsilownia/" class="btn btn-primary btn-block" target="_blank">Siłownia Proces</a></strong><br /><br />
+                    </p>
+                </section>
+
+</div>
         </div>
 
-    <div id="footer" class="container-fluid">
+    <div id="footer" class="container-fluid" style="margin-top: 30px;">
         <div class="navbar navbar-inverse navbar-fixed-bottom">
-            <h4 class="text-center">&copy; @DateTime.Now.Year - StrengthCraft</h4>
+            <div class="text-center" style="margin-top: 5px">&copy; @DateTime.Now.Year - StrengthCraft</div>
         </div>
     </div>
-</body>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/cookies")
+
     @RenderSection("scripts", required: false)
+</body>
+
 </html>

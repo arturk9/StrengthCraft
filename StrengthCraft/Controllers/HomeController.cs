@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace StrengthCraft.Controllers
 {
@@ -13,23 +9,29 @@ namespace StrengthCraft.Controllers
             return View();
         }
 
+        [Route("wspolpraca")]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+ 
             return View();
         }
 
+        [Route("kontakt")]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
 
+        [Route("regulamin")]
         public ActionResult Regulations()
         {
-            ViewBag.Message = "Your regulations page.";
+            return View();
+        }
+
+        [Route("pomoc")]
+        public ActionResult Help()
+        {
 
             return View();
         }
