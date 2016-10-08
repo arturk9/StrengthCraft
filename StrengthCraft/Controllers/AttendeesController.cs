@@ -9,12 +9,14 @@ namespace StrengthCraft.Controllers
 {
     public class AttendeesController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public AttendeesController()
         {
             _context = new ApplicationDbContext();
         }
+
+        [Route("zapisz-sie")]
         // GET: Attendees
         public ActionResult Create()
         {
@@ -26,6 +28,7 @@ namespace StrengthCraft.Controllers
         }
 
         [HttpPost]
+        [Route("zapisz-sie")]
         public ActionResult CreateAttendance(AttendanceFormViewModel viewModel)
         {
             var category = _context.Categories.Single(g => g.Id == viewModel.Category);
@@ -55,9 +58,9 @@ namespace StrengthCraft.Controllers
             _context.SaveChanges();
 
             return View("~/Views/Attendees/ThankYou.cshtml");
-
         }
 
+        [Route("zapisy/oczekujace")]
         public ActionResult AwaitingAttendances()
         {
 
@@ -69,6 +72,7 @@ namespace StrengthCraft.Controllers
             return View(awaitingAttendances);
         }
 
+        [Route("zapisy/zatwierdzone")]
         public ActionResult AcceptedAttendances()
         {
             var acceptedAttendances = _context.Attendees
@@ -79,6 +83,7 @@ namespace StrengthCraft.Controllers
             return View(acceptedAttendances);
         }
 
+        [Route("zapisy/{id}/akceptuj")]
         public ActionResult AcceptAttendance(int id)
         {
             _context.Attendees.Single(m => m.AttendeeId == id).IsVerified = true;
@@ -87,6 +92,7 @@ namespace StrengthCraft.Controllers
             return RedirectToAction("AwaitingAttendances", "Attendees");
         }
 
+        [Route("zapisy/{id}/usun")]
         public ActionResult DeleteAttendance(int id)
         {
             var attendanceToRemove = _context.Attendees.Single(m => m.AttendeeId == id);
