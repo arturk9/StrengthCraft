@@ -29,6 +29,12 @@ namespace StrengthCraft.Controllers
             return View();
         }
 
+        [Route("onas")]
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
         [Route("pomoc")]
         public ActionResult Help()
         {
