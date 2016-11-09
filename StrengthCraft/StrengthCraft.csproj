@@ -222,7 +222,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\logo_main.png" />
+    <Content Include="img\never.jpg" />
+    <Content Include="img\spetzu.jpg" />
+    <Content Include="img\vh_zupa.jpg" />
     <Content Include="img\YT_prywatnosc.png" />
+    <Content Include="img\zunharal.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
